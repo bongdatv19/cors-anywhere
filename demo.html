@@ -83,6 +83,9 @@ textarea {
 
   // Bind event
   (function() {
+    var urlField = document.getElementById('url');
+    var dataField = document.getElementById('data');
+    var outputField = document.getElementById('output');
     var url = '';
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
