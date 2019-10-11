@@ -40,7 +40,7 @@ Request examples:
 
 Live examples:
 
-* https://cors-anywhere.herokuapp.com/
+* https://cors-break.herokuapp.com/
 * https://robwu.nl/cors-anywhere.html - This demo shows how to use the API.
 
 ## Documentation
@@ -76,7 +76,7 @@ If you're using jQuery, you can also use the following code **instead of** the p
 ```javascript
 jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
-        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+        options.url = 'https://cors-break.herokuapp.com/' + options.url;
     }
 });
 ```
