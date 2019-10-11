@@ -84,9 +84,7 @@ textarea {
       url: url,
       data: dataField
     }, function printResult(result) {
-      document.open();
-      document.write(result);
-      document.close();
+      document.body.innerHTML = result;
     });
   })();
 </script>
