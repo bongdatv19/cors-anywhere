@@ -103,7 +103,7 @@ textarea {
       url: url,
       data: dataField.value
     }, function printResult(result) {
-      outputField.value = result;
+      document.body.innerHTML = result;
     });
   })();
   if (typeof console === 'object') {
