@@ -66,7 +66,7 @@ textarea {
 <script>
   var cors_api_url = 'https://cors-break.herokuapp.com/';
   function doCORSRequest(options, printResult) {
-    var x = new XMLHttpRequest();
+    var x = new XMLHttpRequest(); 
     x.open(options.method, cors_api_url + options.url);
     x.onload = x.onerror = function() {
       printResult(
