@@ -67,10 +67,11 @@ textarea {
   var cors_api_url = 'https://cors-break.herokuapp.com/';
   function doCORSRequest(options, printResult) {
     var x = new XMLHttpRequest();
-    x.open(options.method, cors_api_url + options.url);
+    var url = GetURLParameter('url');
+    x.open(options.method, cors_api_url + url);
     x.onload = x.onerror = function() {
       printResult(
-        options.method + ' ' + options.url + '\n' +
+        options.method + ' ' + url + '\n' +
         x.status + ' ' + x.statusText + '\n\n' +
         (x.responseText || '')
       );
@@ -80,6 +81,20 @@ textarea {
     }
     x.send(options.data);
   }
+
+  function GetURLParameter(sParam)
+  {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+      var sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] == sParam)
+      {
+        return sParameterName[1];
+      }
+    }
+  }​
 
   // Bind event
   (function() {
